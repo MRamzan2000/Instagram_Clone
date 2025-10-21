@@ -3,10 +3,12 @@ plugins {
     id("kotlin-android")
     // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
     id("dev.flutter.flutter-gradle-plugin")
+    id("com.google.gms.google-services")
+
 }
 
 android {
-    namespace = "com.instagram.app.instagram_clone"
+    namespace = "com.instagram.android"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
@@ -21,7 +23,7 @@ android {
 
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId = "com.instagram.app.instagram_clone"
+        applicationId = "com.instagram.android"
         // You can update the following values to match your application needs.
         // For more information, see: https://flutter.dev/to/review-gradle-config.
         minSdk = flutter.minSdkVersion
@@ -42,3 +44,8 @@ android {
 flutter {
     source = "../.."
 }
+dependencies {
+    // ✅ Firebase Bill of Materials (manages versions)
+    implementation(platform("com.google.firebase:firebase-bom:34.4.0"))
+    // ✅ Core Firebase dependency (required to initialize Firebase)
+    implementation("com.google.firebase:firebase-analytics")}
