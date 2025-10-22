@@ -55,7 +55,13 @@ class _LoginScreenState extends State<LoginScreen> {
               const SizedBox(
                 height: 24,
               ),
-              CustomElevatedButton(onTap:(){} , title: "Login")
+              CustomElevatedButton(onTap:(){} , title: "Log in"),
+              Flexible(flex: 2, child: Container()),
+             RichText(text: TextSpan(children: [
+               TextSpan(text: "Don't have an account"),
+               TextSpan(text: "Sign Up."),
+
+             ]))
             ],
           ),
         ),
